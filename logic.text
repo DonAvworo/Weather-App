@@ -1,0 +1,53 @@
+A break-down of tasks to be carried out
+
+Create
+
+1. Search field for a location (html)
+    (a) search field 
+        1. create in html 
+            - text form for user input
+            - submit button to submit the user's input
+        
+        2. create using html and dynamic html
+            - previously searched city returns the results to that city's weather forecast upon clicking on it
+                * REQUIRES JS 
+
+
+2. text fields to populate the weather conditions (html or java script (using dynamic operations))
+    (a) add search history  
+        1. use a local storage to store the user's text input
+            - create a variable in js to store user's input
+            - write a function to minimise the number of user input in search history (optional)
+        2. can be stored in a data base (?)                                                            
+
+3. User Interface
+    (a) display
+        1. date
+            - use date object in js to display current date.
+                * var today= new Date();
+                * document.write(today.toDateString());
+        
+        2. icons to be displayed for each condition
+            - temperature
+            - humidity
+            - wind speed
+            - UV index
+
+        3. name of the city
+            - use textContent display to populate the city returned from the search input (using api) to the screen 
+                * USE OF DYNAMIC JS REQUIRED
+        
+        $. weather color 
+            - favorable
+            - moderate
+            - severe
+        
+        6. 
+    
+
+
+
+
+
+ (a) to get results 
+        1. use a weather api to fetch data
