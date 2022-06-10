@@ -1,0 +1,54 @@
+* {
+/* font-family: 'Merriweather', serif; */
+max-width: 100%;
+}
+
+.video {
+position: relative;
+width: 100%;
+height: 100%;
+}
+
+/* styling for the nav links */
+nav .nav-list {
+position: absolute;
+width: 100%;
+top: 0px;
+/* left: 0; */
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 30px 0 0 0;
+}
+
+/* styling and embelishments for the nav links (li elements) */
+.nav-list li {
+list-style: none;
+text-align: center;
+font-size: 1.5rem;
+font-weight: bolder;
+font-family: 'Courier New', Courier, monospace;
+white-space: nowrap;
+margin: 0 auto; /* this is the margin between the nav links. setting it at auto ensures that the browser displays the elements equally within the container*/
+}
+
+.nav-list li a {
+text-decoration: none;
+color: white;
+/* background-color: #4e7d91; */
+border-radius: 3px;
+border-width: 5px;
+}
+
+/* ATTENTION!!! the hover effect below is not working as supposed to. When a link is hovered on it affects the others
+in this case the font size. using stopPropagation in java script may fix this bug */
+
+.nav-list li a:hover {
+/* border-radius: 3px; */
+/* margin: 5%; */
+font-size: xx-large; /* this changes the size of the text when the mouse is hovering over the link */
+}
+
+
+
+
