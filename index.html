@@ -13,50 +13,81 @@
     
 </head>
 <body>
-    <header class="header">
+    <header class="header-main">
         
-        <video autoplay loop class="video" muted plays-inlined>
-            <source src="./assets/media/weatherWebsite2.mp4" type="video/mp4">
+        <video autoplay loop class="video" muted plays-inlined>  <!-- autoplay and loop is used to make the video play on page load -->
+            <source src="./assets/media/weatherWebsite3.mp4" type="video/mp4">
         </video>
 
-        <nav>
+        <nav>  <!-- navigation bar set as relative to enable other elements to be placed on the container -->
             <ul class="nav-list">
                 <li class="nav-bar"><a href="index.html">Home</a></li>
-                <li class="nav-bar"><a href="about.html">About</a></li>
-                <li class="nav-bar"><a href="contact.html">News</a></li>
-                <li class="nav-bar"><a href="contact.html">Contact</a></li>
+                <li class="nav-bar"><a href="#">About</a></li>
+                <li class="nav-bar"><a href="#">News</a></li>
+                <li class="nav-bar"><a href="#">Contact</a></li>
             </ul>
         </nav>
 
-    </header>
+        <div class="search-bar">  <!-- Set as absolute to enable independent possitioning in the container -->
+            <form>
+                <input type="text" name="city" class="city-input" placeholder="Enter a city">
+                <button class="submit-button" id="submitBtn"> 
+                    <ion-icon class="clowdy" name="cloud"></ion-icon>
+                </button>
+                <!-- <input type="submit" value="Submit" class="submit-button" id="submitBtn"> -->
+            </form>
+        </div>  
+
+        <div class="weather-display" id="weatherDisplay">
+            <div class="header">
+                <h1><span>Weather</span></h1>
+            </div>
     
-    <div class="container">
-        <div class="header">
-            <h1><span>Weather</span></h1>
+            <div class="header">
+                <h3><span>Temperature</span></h1>
+            </div>
+    
+            <div class="header">
+                <h3><span>Humidity</span></h1>
+            </div>
+    
+            <div class="header">
+                <h3><span>Wind</span></h1>
+            </div>
+    
+            <div class="header">
+                <h3><span>UV Index</span></h1>
+            </div>
         </div>
 
-        <div class="header">
-            <h3><span>Temperature</span></h1>
+    </header>
+
+    <!-- <div class="weather-icons">
+        <div class="icon-container">
+            <ion-icon class="icon" name="sunny"></ion-icon>
         </div>
 
-        <div class="header">
-            <h3><span>Humidity</span></h1>
+        <div class="icon-container">
+            <ion-icon class="icon" name="cloudy"></ion-icon>
         </div>
 
-        <div class="header">
-            <h3><span>Wind Speed</span></h1>
+        <div class="icon-container">
+            <ion-icon class="icon" name="rainy"></ion-icon>
         </div>
 
-        <div class="header">
-            <h3><span>UV Index</span></h1>
+        <div class="icon-container">
+            <ion-icon class="icon" name="snow"></ion-icon>
         </div>
-    </div>
 
-    <div class="content">
-        <form>
-            <input type="text" name="city" placeholder="Enter a city">
-            <input type="submit" value="Submit">
-        </form>
-    </div>  
+        <div class="icon-container">
+            <ion-icon class="icon" name="thunderstorm"></ion-icon>
+        </div>
+
+
+
+    </div> -->
+    
+    
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
 </html>
