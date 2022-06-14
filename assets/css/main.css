@@ -1,9 +1,9 @@
 * {
     /* font-family: 'Merriweather', serif; */
     max-width: 100%;
-   
-    
+    max-height: fit-content;
 }
+
 
 .video {
     position: relative;
@@ -58,6 +58,23 @@ in this case the font size. using stopPropagation in java script may fix this bu
     font-size: xx-large; /* this changes the size of the text when the mouse is hovering over the link */
 }
 
+@media screen and (max-width: 370px) {
+    
+    nav .nav-list li a {
+        flex-direction: column;
+    }
+    
+    
+    .nav-list li a {
+        font-size: 20px !important;
+        flex-direction: column;
+    }
+
+
+}
+    
+
+
 .search-bar {
     position: absolute;
     width: 100%;
@@ -74,7 +91,8 @@ in this case the font size. using stopPropagation in java script may fix this bu
     font-size: 1rem;
     text-align: center;
     opacity: 0.7;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
+    border:0vh solid black;
 }
 
 .search-bar .submit-button {
@@ -90,6 +108,7 @@ in this case the font size. using stopPropagation in java script may fix this bu
     background-color: #a47e42;
     font-size: large;
     border:0vh;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
 
@@ -127,28 +146,6 @@ in this case the font size. using stopPropagation in java script may fix this bu
     }
 }
 
-.weather-display {
-    position: absolute;
-    width: 100%;
-    /* height: 100%; */
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    top: 35%;
-}
-
-/* styling for the icons */
-/* .weather-icons .icon {
-    width: 70px;
-    height: 50px;
-    margin: 10px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-} */
 
 
 

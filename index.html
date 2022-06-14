@@ -30,64 +30,41 @@
 
         <div class="search-bar">  <!-- Set as absolute to enable independent possitioning in the container -->
             <form>
-                <input type="text" name="city" class="city-input" placeholder="Enter a city">
+                <input type="text" name="city" class="city-input" placeholder="Enter a city" id="cityInput">
                 <button class="submit-button" id="submitBtn"> 
-                    <ion-icon class="clowdy" name="cloud"></ion-icon>
+                    <img src="./assets/media/weather-Icons/icons8-smiling-sun-50.png">
                 </button>
                 <!-- <input type="submit" value="Submit" class="submit-button" id="submitBtn"> -->
             </form>
         </div>  
 
-        <div class="weather-display" id="weatherDisplay">
-            <div class="header">
-                <h1><span>Weather</span></h1>
+        <div class="weather-condition" id="weatherCondition">
+            <div class="Weather">
+                <h3><span>Weather</span></h1>
             </div>
     
-            <div class="header">
+            <div class="Temperature">
                 <h3><span>Temperature</span></h1>
             </div>
     
-            <div class="header">
+            <div class="Humidity">
                 <h3><span>Humidity</span></h1>
             </div>
     
-            <div class="header">
+            <div class="Wind">
                 <h3><span>Wind</span></h1>
             </div>
     
-            <div class="header">
+            <div class="uv-Index">
                 <h3><span>UV Index</span></h1>
             </div>
         </div>
 
     </header>
-
-    <!-- <div class="weather-icons">
-        <div class="icon-container">
-            <ion-icon class="icon" name="sunny"></ion-icon>
-        </div>
-
-        <div class="icon-container">
-            <ion-icon class="icon" name="cloudy"></ion-icon>
-        </div>
-
-        <div class="icon-container">
-            <ion-icon class="icon" name="rainy"></ion-icon>
-        </div>
-
-        <div class="icon-container">
-            <ion-icon class="icon" name="snow"></ion-icon>
-        </div>
-
-        <div class="icon-container">
-            <ion-icon class="icon" name="thunderstorm"></ion-icon>
-        </div>
-
-
-
-    </div> -->
     
-    
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <!-- <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script> -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/weather.js"></script>
+
 </body>
 </html>
