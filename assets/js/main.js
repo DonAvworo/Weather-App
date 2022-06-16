@@ -51,6 +51,7 @@ function check4CityWeather(e) {
             uvIndexDisplay.textContent = uvIndex;
 
             pushWeatherIcons(); //call the function (created below) to display the appropriate image
+            storeWeatherData(); //call the function to store the weather data in local storage
         })  
         .catch(error => alert(error)) //alert the error if there is one to the user, may not be necessary
     }; 
@@ -58,7 +59,7 @@ function check4CityWeather(e) {
 
 //create a function to check the weather and display the appropriate image 
   function pushWeatherIcons () {  //this function is called from the check4CityWeather function
-    if (weather === 'Clouds') {
+    if (weather === 'Clouds' || weather === 'Cloudy') {
         document.querySelector('.weather-icon').src = 'assets/images/cloud.png';
     }
     else if (weather === 'Clear') {
@@ -98,7 +99,7 @@ function check4CityWeather(e) {
 }; //end of pushWeatherIcons function
 
 //create a function to store the weather data in local storage
-function storeWeatherData () {
+function storeWeatherData () { //this function is called from the check4CityWeather function
     let city = searchInput.value;
     let weather = weatherDisplay.textContent;
     let description = weatherDescription.textContent;
@@ -116,10 +117,10 @@ function storeWeatherData () {
         uvIndex: uvIndex
     };
     localStorage.setItem('weatherData', JSON.stringify(weatherData)); //the setItem method is used to store the data in local storage as a string
-} //end of storeWeatherData function                                  //JSON.stringify is used to convert the data to a string
+} //end of storeWeatherData function                                  //JSON.stringify is used to convert the data to a string ref: https://www.w3schools.com/js/js_json_stringify.asp
 
-//create a function to retrieve the weather data from local storage
-function retrieveWeatherData () {
+//create a function to retrieve the weather data from local storage = CURRENTLY WORKING ON THIS SEGMENT!!!!!
+function retrieveWeatherData () { //HOW DO I GET THE DATA TO DISPLAY ON PAGE LOAD?
     let weatherData = JSON.parse(localStorage.getItem('weatherData')); // the getItem method is used to retrieve the data from local storage as a string
                                                                        // the JSON.parse method is used to convert the string to a JavaScript object
     // to retrieve the data from local storage
@@ -130,5 +131,27 @@ function retrieveWeatherData () {
     windDisplay.textContent = weatherData.wind;
     uvIndexDisplay.textContent = weatherData.uvIndex;
     pushWeatherIcons(); //this will recall the function to display the appropriate image
-    
+
+    // write an if statement for when the weather data is not in local storage
+    if (weatherData === null) {
+        weatherDisplay.textContent = 'No weather data found';
+        weatherDescription.textContent = 'No weather data found';
+        tempDisplay.textContent = 'No weather data found';
+        humidityDisplay.textContent = 'No weather data found';
+        windDisplay.textContent = 'No weather data found';
+        uvIndexDisplay.textContent = 'No weather data found';
+        document.querySelector('.weather-icon').src = 'assets/images/default.png';
+    }
+
+    // if the weather data is in local storage, the following will be displayed
+    else {
+        weatherDisplay.textContent = weatherData.weather;
+        weatherDescription.textContent = weatherData.description;
+        tempDisplay.textContent = weatherData.temp;
+        humidityDisplay.textContent = weatherData.humidity;
+        windDisplay.textContent = weatherData.wind;
+        uvIndexDisplay.textContent = weatherData.uvIndex;
+        document.querySelector('.weather-icon').src = 'assets/images/default.png';
+    }
+
 } //end of retrieveWeatherData function

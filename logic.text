@@ -16,16 +16,24 @@ Create
 2. text fields to populate the weather conditions (html or java script (using dynamic operations))
     (a) add search history  
         1. use a local storage to store the user's text input
-            - create a variable in js to store user's input
+            - create a function in js to store user's input
             - write a function to minimise the number of user input in search history (optional)
-        2. can be stored in a data base (?)                                                            
+            - write a function to display the user's input in the search history 
+                * REQUIRES JS
+            - write a function to retrieve and display the user's input in the search history 
+                * REQUIRES JS
+        2. can be stored in a data base (?) 
+        
+        3. write a function to populate the weather icons on the page 
+
+
 
 3. User Interface
     (a) display
         1. date
             - use date object in js to display current date.
-                * var today= new Date();
-                * document.write(today.toDateString());
+                * var today= new Date(); (optional)
+                * document.write(today.toDateString()); (optional)
         
         2. icons to be displayed for each condition
             - temperature
@@ -44,6 +52,24 @@ Create
         
         6. 
     
+4. Display weather icons
+    (a) use the weather api to display the weather icons
+        1. use the weather api to display the weather icons (using dynamic operations) - DID NOT WORK!!!!!
+        
+        2. use the weather icon folder as the location of api to display the weather icons (using dynamic operations)
+
+        3. create a dedicatted .js file for the weather icons
+            - add links to the weather icons in the .js file and call them in the main.js file
+                * use JSON to create a dynamic array of the weather icons
+                * use a for loop to iterate through the array and display the icons in the main.js file (I hate for-loops in js)
+                * use a function to display the icons in the main.js file
+                * use an if statement to display the icons in the main.js file
+        
+        4. Create a dedicated .html file for the weather icons or use the existing .html file
+            - add links to the weather icons in the .html file and call them in the main.js file
+                * Hard-code the weather icons in the .html file
+                * use a function to display the icons in the main.js file
+                * use 'visibility' to display the icons in the main.js file
 
 
 
