@@ -39,66 +39,96 @@ function check4CityWeather(e) {
             let temp = data['main']['temp'];
             let humidity = data['main']['humidity'];
             let wind = data['wind']['speed'];
-            let uvIndex = data['uvi'];
-
-            //display the weather data
-            // weatherDisplay.innerHTML = weather;
-            tempDisplay.innerHTML = temp;
-            // humidityDisplay.innerHTML = humidity;
-            // windDisplay.innerHTML = wind;
-            // uvIndexDisplay.innerHTML = uvIndex;
-            
+            // let uvIndex = data['uvi'];
+            let uvIndex = data['visibility'];
 
             //display the weather data using the variables created above (using DOM queryselector)linking to the display area
             weatherDisplay.textContent = weather;
             weatherDescription.textContent = description;
-            // tempDisplay.textContent = temp;
+            tempDisplay.textContent = temp;
             humidityDisplay.textContent = humidity;
             windDisplay.textContent = wind;
             uvIndexDisplay.textContent = uvIndex;
 
-            //create a function to check the weather and display the appropriate image 
-            // function pushWeatherIcons(weather) {  
-            //     if (weather === 'Clouds') {
-            //         document.querySelector('.weather-icon').src = 'assets/images/cloud.png';
-            //     }
-            //     else if (weather === 'Clear') {
-            //         document.querySelector('.weather-icon').src = 'assets/images/sun.png';
-            //     }
-            //     else if (weather === 'Rain') {  
-            //         document.querySelector('.weather-icon').src = 'assets/images/rain.png';
-            //     }   
-            //     else if (weather === 'Snow') {
-            //         document.querySelector('.weather-icon').src = 'assets/images/snow.png';
-            //     }
-            //     else if (weather === 'Mist') {
-            //         document.querySelector('.weather-icon').src = 'assets/images/mist.png';
-            //     }
-            //     else if (weather === 'Thunderstorm') {
-            //         document.querySelector('.weather-icon').src = 'assets/images/thunderstorm.png';
-            //     }
-            //     else if (weather === 'Drizzle') {
-            //         document.querySelector('.weather-icon').src = 'assets/images/drizzle.png';
-            //     }
-            //     else if (weather === 'Haze') {
-            //         document.querySelector('.weather-icon').src = 'assets/images/haze.png';
-            //     }
-            //     else if (weather === 'Mist') {
-            //         document.querySelector('.weather-icon').src = 'assets/images/mist.png'; 
-            //     }
-            //     else if (weather === 'Dust') {
-            //         document.querySelector('.weather-icon').src = 'assets/images/dust.png'; 
-            //     }
-            //     else if (weather === 'Fog') {   
-            //         document.querySelector('.weather-icon').src = 'assets/images/fog.png';
-            //     }
-            //     //if the weather is not one of the above, display the default image
-            //     else {
-            //         document.querySelector('.weather-icon').src = 'assets/images/default.png';
-            //     };
-            // } //end of pushWeatherIcons function
-            
+            pushWeatherIcons(); //call the function (created below) to display the appropriate image
         })  
         .catch(error => alert(error)) //alert the error if there is one to the user, may not be necessary
     }; 
-};
+}; //end of check4CityWeather function
+
+//create a function to check the weather and display the appropriate image 
+  function pushWeatherIcons () {  //this function is called from the check4CityWeather function
+    if (weather === 'Clouds') {
+        document.querySelector('.weather-icon').src = 'assets/images/cloud.png';
+    }
+    else if (weather === 'Clear') {
+        document.querySelector('.weather-icon').src = 'assets/images/sun.png';
+    }
+    else if (weather === 'Rain') {  
+        document.querySelector('.weather-icon').src = 'assets/images/rain.png';
+    }   
+    else if (weather === 'Snow') {
+        document.querySelector('.weather-icon').src = 'assets/images/snow.png';
+    }
+    else if (weather === 'Mist') {
+        document.querySelector('.weather-icon').src = 'assets/images/mist.png';
+    }
+    else if (weather === 'Thunderstorm') {
+        document.querySelector('.weather-icon').src = 'assets/images/thunderstorm.png';
+    }
+    else if (weather === 'Drizzle') {
+        document.querySelector('.weather-icon').src = 'assets/images/drizzle.png';
+    }
+    else if (weather === 'Haze') {
+        document.querySelector('.weather-icon').src = 'assets/images/haze.png';
+    }
+    else if (weather === 'Mist') {
+        document.querySelector('.weather-icon').src = 'assets/images/mist.png'; 
+    }
+    else if (weather === 'Dust') {
+        document.querySelector('.weather-icon').src = 'assets/images/dust.png'; 
+    }
+    else if (weather === 'Fog') {   
+        document.querySelector('.weather-icon').src = 'assets/images/fog.png';
+    }
+    else {
+        document.querySelector('.weather-icon').src = 'assets/images/default.png';
+        // if the weather is not one of the above, will display a default image
+    };
+}; //end of pushWeatherIcons function
+
+//create a function to store the weather data in local storage
+function storeWeatherData () {
+    let city = searchInput.value;
+    let weather = weatherDisplay.textContent;
+    let description = weatherDescription.textContent;
+    let temp = tempDisplay.textContent;
+    let humidity = humidityDisplay.textContent;
+    let wind = windDisplay.textContent;
+    let uvIndex = uvIndexDisplay.textContent;
+    let weatherData = {
+        city: city,
+        weather: weather,
+        description: description,
+        temp: temp,
+        humidity: humidity,
+        wind: wind,
+        uvIndex: uvIndex
+    };
+    localStorage.setItem('weatherData', JSON.stringify(weatherData)); //the setItem method is used to store the data in local storage as a string
+} //end of storeWeatherData function                                  //JSON.stringify is used to convert the data to a string
+
+//create a function to retrieve the weather data from local storage
+function retrieveWeatherData () {
+    let weatherData = JSON.parse(localStorage.getItem('weatherData')); // the getItem method is used to retrieve the data from local storage as a string
+                                                                       // the JSON.parse method is used to convert the string to a JavaScript object
+    // to retrieve the data from local storage
+    searchInput.value = weatherData.city;                              
+    weatherDescription.textContent = weatherData.description;
+    tempDisplay.textContent = weatherData.temp;
+    humidityDisplay.textContent = weatherData.humidity;
+    windDisplay.textContent = weatherData.wind;
+    uvIndexDisplay.textContent = weatherData.uvIndex;
+    pushWeatherIcons(); //this will recall the function to display the appropriate image
+    
+} //end of retrieveWeatherData function
