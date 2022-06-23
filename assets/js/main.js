@@ -27,9 +27,9 @@ function check4CityWeather(e) {
     else { 
         
         alert('Clicked! Checking for weather...');
-        //get the weather data from the API website 
-        fetch ('https://api.openweathermap.org/data/2.5/weather?q='+searchInput.value+'&appid=b34a7759c1f7ec1096a8d091ee38b500')
-        //enter promise
+        //get the weather data from the API website                     add a the key and value (units=metric) to change the temperature unit   
+        fetch ('https://api.openweathermap.org/data/2.5/weather?q='+searchInput.value+'&appid=b34a7759c1f7ec1096a8d091ee38b500&units=metric')
+        //enter promise 
         .then(response => response.json())
         // .then(data => console.log(data)) //print the data to the console for debugging purposes only 
         .then(data => {
