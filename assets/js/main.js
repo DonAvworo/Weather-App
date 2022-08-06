@@ -26,7 +26,7 @@ function check4CityWeather(e) {
     // }
     else { 
         
-        alert('Clicked! Checking for weather...');
+        // alert('Clicked! Checking for weather...');
         //get the weather data from the API website                     add a the key and value (units=metric) to change the temperature unit   
         fetch ('https://api.openweathermap.org/data/2.5/weather?q='+searchInput.value+'&appid=b34a7759c1f7ec1096a8d091ee38b500&units=metric')
         //enter promise 
@@ -39,6 +39,7 @@ function check4CityWeather(e) {
             let temp = data['main']['temp'];
             let humidity = data['main']['humidity'];
             let wind = data['wind']['speed'];
+            
             // let uvIndex = data['uvi'];
             let uvIndex = data['visibility'];
 
@@ -49,54 +50,13 @@ function check4CityWeather(e) {
             humidityDisplay.textContent = humidity;
             windDisplay.textContent = wind;
             uvIndexDisplay.textContent = uvIndex;
+            
 
-            pushWeatherIcons(); //call the function (created below) to display the appropriate image
             storeWeatherData(); //call the function to store the weather data in local storage
         })  
         .catch(error => alert(error)) //alert the error if there is one to the user, may not be necessary
     }; 
 }; //end of check4CityWeather function
-
-//create a function to check the weather and display the appropriate image 
-  function pushWeatherIcons () {  //this function is called from the check4CityWeather function
-    if (weather === 'Clouds' || weather === 'Cloudy') {
-        document.querySelector('.weather-icon').src = 'assets/images/cloud.png';
-    }
-    else if (weather === 'Clear') {
-        document.querySelector('.weather-icon').src = 'assets/images/sun.png';
-    }
-    else if (weather === 'Rain') {  
-        document.querySelector('.weather-icon').src = 'assets/images/rain.png';
-    }   
-    else if (weather === 'Snow') {
-        document.querySelector('.weather-icon').src = 'assets/images/snow.png';
-    }
-    else if (weather === 'Mist') {
-        document.querySelector('.weather-icon').src = 'assets/images/mist.png';
-    }
-    else if (weather === 'Thunderstorm') {
-        document.querySelector('.weather-icon').src = 'assets/images/thunderstorm.png';
-    }
-    else if (weather === 'Drizzle') {
-        document.querySelector('.weather-icon').src = 'assets/images/drizzle.png';
-    }
-    else if (weather === 'Haze') {
-        document.querySelector('.weather-icon').src = 'assets/images/haze.png';
-    }
-    else if (weather === 'Mist') {
-        document.querySelector('.weather-icon').src = 'assets/images/mist.png'; 
-    }
-    else if (weather === 'Dust') {
-        document.querySelector('.weather-icon').src = 'assets/images/dust.png'; 
-    }
-    else if (weather === 'Fog') {   
-        document.querySelector('.weather-icon').src = 'assets/images/fog.png';
-    }
-    else {
-        document.querySelector('.weather-icon').src = 'assets/images/default.png';
-        // if the weather is not one of the above, will display a default image
-    };
-}; //end of pushWeatherIcons function
 
 //create a function to store the weather data in local storage
 function storeWeatherData () { //this function is called from the check4CityWeather function
