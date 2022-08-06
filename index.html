@@ -14,11 +14,6 @@
 </head>
 <body>
     <header class="header-main">
-        
-        <video autoplay loop class="video" muted plays-inlined>  <!-- autoplay and loop is used to make the video play on page load -->
-            <source src="./assets/media/weatherWebsite.mp4" type="video/mp4">
-        </video>
-
         <nav>  <!-- navigation bar set as relative to enable other elements to be placed on the container -->
             <ul class="nav-list">
                 <li class="nav-bar"><a href="index.html">Home</a></li>
@@ -28,35 +23,21 @@
             </ul>
         </nav>
 
-        <div class="search-bar">  <!-- Set as absolute to enable independent possitioning in the container -->
-            <form>
-                <input type="text" name="city" class="city-input" placeholder="Enter a city" id="cityInput">
-                <button class="submit-button" id="submitBtn"> 
-                    <img src="./assets/media/weather-Icons/icons8-smiling-sun-50.png">
-                </button>
-                <!-- <input type="submit" value="Submit" class="submit-button" id="submitBtn"> -->
-            </form>
-        </div>  
+        <div class="main">
+            <video autoplay loop class="video" muted plays-inlined>  <!-- autoplay and loop is used to make the video play on page load -->
+                <source src="./assets/media/weatherWebsite.mp4" type="video/mp4">
+            </video>
 
-        <div class="weather-condition" id="weatherCondition">
-
-            <h3>Weather: <span id="weather"></span>, <span id="description"></h3>
-                <p id="weather-icons"></p>
-            
-            <h3>Temperature: <span id="temp"></span></h3>
-                <p id="temp-icon"></p>
-            
-            <h3>Humidity: <span id="humidity"></span></h3>
-                <p id="humidity-icon"></p>
-           
-            <h3>Wind speed: <span id="wind"></span></h3>
-                <p id="wind-icon"></p>
-            
-            <h3>UV Index: <span id="uv-index"></span></h3>
-                <p id="uv-index-icon"></p>
-           
+            <div class="search-bar">  <!-- Set as absolute to enable independent possitioning in the container -->
+                <form>
+                    <input type="text" name="city" class="city-input" placeholder="Enter a city" id="cityInput">
+                    <button class="submit-button" id="submitBtn"> 
+                        <img src="./assets/media/weather-Icons/icons8-smiling-sun-50.png">
+                    </button>
+                    <!-- <input type="submit" value="Submit" class="submit-button" id="submitBtn"> -->
+                </form>
+            </div>  
         </div>
-
     </header>
     
     <!-- <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script> -->

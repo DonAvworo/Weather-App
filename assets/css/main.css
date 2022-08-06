@@ -11,24 +11,7 @@
     height: 100%;
 }
 
-/* styling for the nav links */
-nav .nav-list {
-    position: absolute;
-    width: 100%;
-    top: 0px;
-    /* left: 0; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0 0 0;
-}
-@media screen and (max-width: 768px) {
-    nav .nav-list li a {
-        display: flex;
-        /* flex-direction: column; */
-        font-size: 20px !important;
-    }
-}
+
 
 /* styling and embelishments for the nav links (li elements) */
 .nav-list li {
