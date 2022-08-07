@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     
@@ -21,15 +22,15 @@
             </a>
         </div>
        
-        <div class="video-container main"> Main  
+        <div class="video-container main">  
             <div class="video-card"> 
                 <video autoplay loop class="video" muted plays-inlined>  <!-- autoplay and loop is used to make the video play on page load -->
-                    <!-- <source src="./assets/media/weatherWebsite.mp4" type="video/mp4"> -->
+                    <source src="./assets/media/weatherWebsite.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
 
-        <div class="search"> Search Form
+        <div class="search"> 
             <div class="search-bar">  <!-- Set as absolute to enable independent possitioning in the container -->
                 <form>
                     <input type="text" name="city" class="city-input" placeholder="Enter a city" id="cityInput">
@@ -41,7 +42,7 @@
             </div> 
         </div> 
 
-        <div class="weather" id="weatherCondition"> Daily Weather Condition
+        <div class="weather" id="weatherCondition"> 
 
             <h3>Weather: <span id="weather"></span><span id="description"></h3>
             <p id="weather-icons"></p>
@@ -63,7 +64,7 @@
            
         </div>
 
-        <div class="weekly-forecast" id="weatherForecast"> Weather Forecast
+        <div class="weekly-forecast" id="weatherForecast"> 
             <div class="forecast-container">
                 <div class="forecast-card">
                     <h3>Forecast: <span id="forecast"></span></h3>

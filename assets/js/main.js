@@ -15,6 +15,7 @@ let uvIndexDisplay = document.getElementById('uv-index');
 
 //create a function to check for the city input and display the weather
 function check4CityWeather(e) {
+    console.log('check4CityWeather function called');
     e.preventDefault();
     let city = searchInput.value;
     if (city === '') {

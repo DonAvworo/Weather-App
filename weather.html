@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/weather.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card-wrapper">
+        <div class="search">
+            <div class="search-bar">
+                <form>
+                    <input type="text" name="city" class="city-input" placeholder="Enter a city" id="cityInput">
+                    <button class="submit-button" id="submitBtn">
+                        <img src="./assets/media/weather-Icons/icons8-smiling-sun-50.png" width="30">
+                    </button>
+                    <!-- <input type="submit" value="Submit" class="submit-button" id="submitBtn"> -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="weather">
+        <h3>City: <span id="city"></span></h3>
+        
+        <h3>Weather: <span id="weather"></span><span id="description"></h3>
+        <p id="weather-icons"></p>
+        
+        <h3>Temperature: <span id="temp"></span></h3>
+        <p id="temp-icon"></p>
+        
+        <h3>Humidity: <span id="humidity"></span></h3>
+        <p id="humidity-icon"></p>
+        
+        <h3>Wind speed: <span id="wind"></span></h3>
+        <p id="wind-icon"></p>
+        
+        <h3>UV Index: <span id="uv-index"></span></h3>
+        <p id="uv-index-icon"></p>
+
+    </div>
+    <script src="./assets/js/weather.js"></script>
+</body>
+</html>
